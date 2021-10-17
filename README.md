@@ -126,3 +126,34 @@ Sur ma petite VM de test, si je met 15 comme paramètre, j'ai très vite des err
 `-bash: fork: retry: Ressource temporairement non disponible`.
 Je ne suis pas sûr de comprendre pourquoi. Il y a sans doute une limite à 32000 processus quelque part.
 
+
+## Tests supplémentaires
+
+Étant frustré par mes tests dans la VM, j'ai essayé avec mon PC de bureau.
+
+```shell
+$ perl boum.pl 15 0.1
+```
+
+Voici ce que j'obtiens, au bout de quelques secondes :
+
+```shell
+$ uptime
+ 00:09:15 up  1:11,  1 user,  load average: 21958,29, 7277,78, 2580,78
+
+$ # Pendant l'execution
+$ $ free -b
+               total       utilisé      libre     partagé tamp/cache   disponible
+Mem:     25192144896  6537797632 14590922752   160915456  4063424512 18085064704
+Partition d'échange:25769799680           0 25769799680
+
+$ # Après l'execution
+$ free -b
+               total       utilisé      libre     partagé tamp/cache   disponible
+Mem:     25192144896  3710021632 17432293376   160911360  4049829888 20912844800
+Partition d'échange:25769799680           0 25769799680
+
+```
+
+Un load average > 20 000 pour une consommation RAM de 2827780096 octets, soit 2,8 Go de RAM.
+Je m'attendais à moins de consommation, le copy-on-write ne doit pas marcher comme je m'y attendais.
