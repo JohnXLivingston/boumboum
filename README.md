@@ -92,6 +92,8 @@ Et oui, chaque fork va doubler le nombre de processus... Ce qui fait une progres
 Pour une valeur passée de 10, on aura donc 1024 processus !
 Ce qui, sur une petite VM de test, fait déjà un load average de plus de 700 (avec un sleep à 0.1).
 
+NB: pour lancer plus progressivement qu'en 2^N, lancer plusieurs fois le script en parallèle (ou lancer directement le binaire `boum` généré plusieurs fois).
+
 
 Et niveau utilisation mémoire...
 
