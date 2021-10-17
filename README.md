@@ -120,7 +120,7 @@ Partition d'échange: 1023406080   185860096   837545984
 Remarque : je ne suis pas sûr que l'utilisation mémoire affichée par l'OS soit pertinente, à cause du copy on write.
 Je pense qu'il faut plutôt regarder les changements sur la mémoire disponible.
 
-Dans l'exemple donné ci dessus, le delta sur la mémoire disponible est de l'ordre de 100Mo de RAM. 
+Dans l'exemple donné ci dessus, le delta sur la mémoire disponible est de l'ordre de 100Mo de RAM (et il faut compter la mémoire utilisée par perl, puisque j'ai lancé l'exécutable depuis le script). 
 
 Sur ma petite VM de test, si je met 15 comme paramètre, j'ai très vite des erreurs de type
 `-bash: fork: retry: Ressource temporairement non disponible`.
