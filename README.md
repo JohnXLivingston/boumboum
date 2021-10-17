@@ -1,6 +1,6 @@
 # boumboum
 
-Ceci est un petit proof of concept pour répondre au concours lancé par Yves Rougy ici : https://twitter.com/yrougy/status/1449819488896040960
+Ceci est un petit proof of concept pour répondre au challenge lancé par Yves Rougy ici : https://twitter.com/yrougy/status/1449819488896040960
 
 Le but est de faire un programme qui génère un maximum de load average, en utilisant le moins de RAM possible.
 
